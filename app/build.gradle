@@ -48,4 +48,13 @@ dependencies {
     //annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
     //kotlin 集成
     kapt 'com.jakewharton:butterknife-compiler:10.2.3'
+
+    //mvp core
+    implementation 'com.github.cn-ljb:kotlin-mvp-lib:1.2.0'
+
+//网络库lib、数据库lib 根据项目实际情况引入
+//net lib
+    implementation 'com.github.cn-ljb:netlib:1.0.1'
+//dao lib
+    implementation 'com.github.cn-ljb:daolib:1.0.1'
 }

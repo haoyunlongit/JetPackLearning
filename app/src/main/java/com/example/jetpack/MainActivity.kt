@@ -12,7 +12,6 @@ import okhttp3.Request
 import okhttp3.Response
 
 class MainActivity : AppCompatActivity() {
-    val BASE_HTTP: String = "https://gank.io/api/v2/banners"
 
     @BindView(R.id.clickView) @JvmField var clickView: TextView? = null
 
@@ -23,19 +22,7 @@ class MainActivity : AppCompatActivity() {
 
         clickView?.setBackgroundColor(Color.RED)
         clickView?.setOnClickListener {
-            testMethored()
         }
     }
-    
-    fun testMethored() {
-        Thread({
-            var request = Request.Builder().url(BASE_HTTP).build()
-            var client = OkHttpClient()
-            var call = client.newCall(request)
-            var respond = call.execute()
-            var tempStr = respond.body?.string()
-            print("~~~~~~$tempStr")
-        }).start()
 
-    }
 }
