@@ -1,6 +1,7 @@
 package  com.example.jetpack.model
 
 import com.example.jetpack.contract.BannerContract
+import com.example.jetpack.model.network.NetworkManager
 import mvp.ljb.kt.model.BaseModel
 import mvp.ljb.kt.model.CallBack
 import okhttp3.*
