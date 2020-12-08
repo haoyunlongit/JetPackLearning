@@ -6,6 +6,7 @@ import mvp.ljb.kt.model.BaseModel
 import mvp.ljb.kt.model.CallBack
 import okhttp3.*
 import java.io.IOException
+import java.net.Socket
 
 /**
  * @Author Kotlin MVP Plugin
@@ -16,6 +17,7 @@ class BannerModel : BaseModel(), BannerContract.IModel {
     val BASE_HTTP: String = "https://gank.io/api/v2/banners"
 
     override fun requestBannerDate() {
+
         var request = Request.Builder().url(BASE_HTTP).build()
         var client = OkHttpClient()
         var call = client.newCall(request)
