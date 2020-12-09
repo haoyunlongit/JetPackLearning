@@ -55,8 +55,21 @@ dependencies {
 //dao lib
     implementation 'com.github.cn-ljb:daolib:1.0.1'
     implementation("com.squareup.okhttp3:okhttp:${rootProject.ext.okhttpVersion}")
+
+    /**
+     *   retrofit2
+     */
     implementation "com.squareup.retrofit2:retrofit:${rootProject.ext.retrofitVersion}"
     implementation "com.squareup.retrofit2:adapter-rxjava2:${rootProject.ext.retrofitVersion}"
     implementation "com.squareup.retrofit2:converter-gson:${rootProject.ext.retrofitVersion}"
     implementation "com.squareup.retrofit2:converter-moshi:${rootProject.ext.retrofitVersion}"
+    //String类型转换
+    implementation "com.squareup.retrofit2:converter-scalars:${rootProject.ext.retrofitVersion}"
+
+    /**
+     * rxjava
+     */
+    implementation "io.reactivex.rxjava2:rxjava:${rootProject.ext.rxjavaVersion}"
+    implementation "io.reactivex.rxjava2:rxandroid:${rootProject.ext.rxandroidVersion}"
+    implementation "io.reactivex.rxjava2:rxkotlin:${rootProject.ext.rxkotlinVersion}"
 }

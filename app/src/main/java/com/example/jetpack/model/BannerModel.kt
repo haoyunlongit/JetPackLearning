@@ -1,12 +1,14 @@
 package  com.example.jetpack.model
 
+import android.util.Log
 import com.example.jetpack.contract.BannerContract
-import com.example.jetpack.model.network.NetworkManager
+import com.example.jetpack.model.network.NetWorkCommentInterface
+import com.example.jetpack.model.network.NetworkBaseManager
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.rxkotlin.subscribeBy
+import io.reactivex.schedulers.Schedulers
 import mvp.ljb.kt.model.BaseModel
-import mvp.ljb.kt.model.CallBack
-import okhttp3.*
-import java.io.IOException
-import java.net.Socket
+import java.lang.Exception
 
 /**
  * @Author Kotlin MVP Plugin
@@ -14,22 +16,22 @@ import java.net.Socket
  * @Description input description
  **/
 class BannerModel : BaseModel(), BannerContract.IModel {
-    val BASE_HTTP: String = "https://gank.io/api/v2/banners"
-
     override fun requestBannerDate() {
-
-        var request = Request.Builder().url(BASE_HTTP).build()
-        var client = OkHttpClient()
-        var call = client.newCall(request)
-        call.enqueue(object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                TODO("Not yet implemented")
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-
-            }
-
-        })
+        var tempInter: NetWorkCommentInterface = NetworkBaseManager.getServiceApi(
+            NetWorkCommentInterface::class.java,
+            "https://gank.io/"
+        )
+        try {
+            tempInter.getBannerInfo().subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread()).subscribeBy(onError = {
+                    Log.e("hyl", "messge$it", it)
+                },
+                onSuccess = {
+                    it.raw().toString()
+                    Log.i("hyl", "messge")
+                })
+        } catch (ex: Exception) {
+            Log.e("hyl", "eeeor" ,ex)
+        }
     }
 }
