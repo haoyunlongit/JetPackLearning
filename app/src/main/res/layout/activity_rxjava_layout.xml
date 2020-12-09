@@ -8,10 +8,10 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/baseUse"
         android:layout_width="200dp"
         android:layout_height="60dp"
-        android:text="RxJava"
+        android:text="RxJava基本用法"
         android:textSize="30dp"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/textView2"
