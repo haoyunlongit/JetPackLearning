@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="11dp"
+    android:layout_marginBottom="11dp"
+    android:layout_marginStart="21.8dp"
+    android:layout_marginEnd="21.8dp">
+    <ImageView android:id="@+id/group_subview_icon"
+        android:layout_gravity="center_vertical"
+        android:layout_width="29dp"
+        android:layout_height="29dp"/>
+    <LinearLayout android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginStart="11dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="11dp">
+        <TextView android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/group_subview_title_id"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:textStyle="bold"
+            android:layout_marginStart="1dp"
+            android:textSize="15.27sp"
+            android:layout_marginLeft="1dp" />
+        <FrameLayout android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:clipChildren="false"
+            android:background="@android:color/transparent">
+            <View
+                android:id="@+id/permission_developer_report_icon"
+                android:layout_width="66.18dp"
+                android:layout_height="16.2dp"
+                android:layout_gravity="start"
+                android:layout_marginTop="4dp" />
+            <TextView android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:layout_gravity="start"
+                android:ellipsize="end"
+                android:layout_marginTop="3dp"
+                android:layout_marginStart="1dp"
+                android:lineSpacingExtra="3dp"
+                android:id="@+id/group_subview_subtitle_id"
+                android:textSize="12.36sp"
+                android:layout_marginLeft="1dp" />
+        </FrameLayout>
+    </LinearLayout>
+
+</androidx.appcompat.widget.LinearLayoutCompat>
